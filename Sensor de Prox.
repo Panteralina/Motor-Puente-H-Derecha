@@ -1,0 +1,41 @@
+int sensor=5;
+int motor3=1;
+int motor2=2;
+int motor1b=3;
+int motor2b=4;
+
+void setup() {
+Serial.begin(9600);
+pinMode(1,OUTPUT);
+pinMode(2,OUTPUT);
+pinMode(3,OUTPUT);
+pinMode(4,OUTPUT);
+}
+
+void loop() {
+int sensorval=analogRead(sensor);
+Serial.println(sensorval);  
+if(sensorval>200){
+  digitalWrite(1,HIGH);
+  digitalWrite(2,LOW);
+  digitalWrite(3,LOW);
+  digitalWrite(4,HIGH);
+ delay(1000);
+ digitalWrite(1,HIGH);
+ digitalWrite(2,LOW);
+ digitalWrite(3,HIGH);
+ digitalWrite(4,LOW);
+ delay(1000);
+}  
+  
+  if(sensorval>190){
+    digitalWrite(1,LOW);
+    digitalWrite(2,LOW);
+    digitalWrite(3,LOW);
+    digitalWrite(4,LOW);
+    
+    
+  }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+}
